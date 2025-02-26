@@ -1,0 +1,28 @@
+How to connect Python to MySQL DB:
+
+Copy Paste this into your windows cmd and then run each command
+	
+	# For mysql-connector-python
+	pip install mysql-connector-python
+
+	# For PyMySQL
+	pip install pymysql
+
+After this you want to use your preferred IDE (I use Jupyter notebook) to code for the connection:
+
+	import mysql.connector
+
+	# Establish a connection
+	conn = mysql.connector.connect(
+    		host="localhost",      # Replace with your host which in my case is localhost since I run MySQL on my laptop
+    		user="your_username",  # Replace with your username
+   	 	password="your_password",  # Replace with your password 
+    		database="your_database"   # Replace with your database name
+)
+
+# Create a cursor object to interact with the database
+cursor = conn.cursor()
+
+print("Connected to MySQL database!")
+
+
